@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   # Runtime
   s.add_dependency('spree_core', '~> 3.1.0')
-  s.add_dependency('gibbon', '~> 2.2.4')
+  s.add_dependency('gibbon', '~> 3.2.0')
 
   s.add_development_dependency "sqlite3"
 end

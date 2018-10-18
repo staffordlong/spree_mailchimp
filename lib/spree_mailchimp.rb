@@ -3,7 +3,7 @@ require "spree_mailchimp/engine"
 require "spree_mailchimp/version"
 
 module SpreeMailchimp
-  class List    
+  class List
     require "gibbon"
 
     # TODO allow configuration of timeout
