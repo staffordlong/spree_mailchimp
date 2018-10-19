@@ -2,9 +2,9 @@ module Spree
   PermittedAttributes.user_attributes << :mailchimp_opt_in
 
   User.class_eval do
-    after_save :sync_mailchimp_preferences
+    after_save :sync_mailchimp_preferences, :sync_mailchimp_customer
 
-    private 
+    private
 
     def sync_mailchimp_preferences
       if mailchimp_list
@@ -20,6 +20,13 @@ module Spree
       end
     end
 
+    def sync_mailchimp_customer
+      mailchimp_customer.create_or_update(self) if mailchimp_customer
+    end
+
+    def mailchimp_customer
+      @mailchimp_customer ||= SpreeMailchimp::Customer.new
+    end
 
     def mailchimp_list
       @mailchimp_list ||= SpreeMailchimp::List.new

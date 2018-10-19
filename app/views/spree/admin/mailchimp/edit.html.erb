@@ -19,23 +19,28 @@
             <%= text_field_tag :mailchimp_list_id, Spree::Config.mailchimp_list_id, class: 'form-control'  %>
           </div>
 
+          <div class="form-group" data-hook="admin_mailchimp_input_mailchimp_store_id">
+            <%= label_tag :mailchimp_store_id %>
+            <%= text_field_tag :mailchimp_store_id, Spree::Config.mailchimp_store_id, class: 'form-control'  %>
+          </div>
+
           <div class="checkbox" data-hook="admin_mailchimp_input_checkbox_during_registration">
             <%= label_tag do %>
-              <%= check_box nil, :mailchimp_checkbox_during_registration, name: :mailchimp_checkbox_during_registration, checked: Spree::Config.mailchimp_checkbox_during_registration %> 
+              <%= check_box nil, :mailchimp_checkbox_during_registration, name: :mailchimp_checkbox_during_registration, checked: Spree::Config.mailchimp_checkbox_during_registration %>
               <%= Spree.t(:display_checkbox_during_registration, scope: :mailchimp) %>
             <% end %>
           </div>
 
           <div class="checkbox" data-hook="admin_mailchimp_input_user_must_opt_in">
             <%= label_tag do %>
-              <%= check_box nil, :mailchimp_user_must_opt_in, name: :mailchimp_user_must_opt_in, checked: Spree::Config.mailchimp_user_must_opt_in %> 
+              <%= check_box nil, :mailchimp_user_must_opt_in, name: :mailchimp_user_must_opt_in, checked: Spree::Config.mailchimp_user_must_opt_in %>
               <%= Spree.t(:user_must_opt_in, scope: :mailchimp) %>
             <% end %>
           </div>
           <div class="form-actions" data-hook="buttons">
             <%= button Spree.t('actions.update'), 'save' %>
           </div>
-        </div>          
+        </div>
       </div>
 
     </fieldset>
